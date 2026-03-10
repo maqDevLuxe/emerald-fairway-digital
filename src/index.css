@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 20% 97%;
+    --foreground: 150 30% 10%;
+
+    --card: 60 15% 95%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 60 20% 97%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 152 45% 22%;
+    --primary-foreground: 60 20% 97%;
+
+    --secondary: 40 30% 90%;
+    --secondary-foreground: 150 30% 10%;
+
+    --muted: 60 10% 92%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 38 40% 70%;
+    --accent-foreground: 150 30% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 85%;
+    --input: 40 20% 85%;
+    --ring: 152 45% 22%;
+
+    --radius: 0.25rem;
+
+    --champagne: 38 45% 78%;
+    --champagne-light: 38 40% 92%;
+    --masters-green: 152 45% 22%;
+    --masters-green-light: 152 35% 35%;
+    --masters-green-glow: 152 60% 40%;
+    --cream: 42 30% 95%;
+    --gold: 38 60% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 150 20% 5%;
+    --foreground: 60 20% 95%;
+    --card: 150 20% 8%;
+    --card-foreground: 60 20% 95%;
+    --popover: 150 20% 8%;
+    --popover-foreground: 60 20% 95%;
+    --primary: 152 50% 40%;
+    --primary-foreground: 60 20% 97%;
+    --secondary: 150 15% 15%;
+    --secondary-foreground: 60 20% 95%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 60 10% 60%;
+    --accent: 38 40% 55%;
+    --accent-foreground: 60 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 150 15% 18%;
+    --input: 150 15% 18%;
+    --ring: 152 50% 40%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    cursor: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  a, button {
+    cursor: none;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 lg:py-32;
+  }
+
+  .green-glow {
+    box-shadow: 0 0 20px hsl(152 60% 40% / 0.3), 0 0 60px hsl(152 60% 40% / 0.1);
+  }
+
+  .green-glow-hover {
+    transition: box-shadow 0.4s ease;
+  }
+  .green-glow-hover:hover {
+    box-shadow: 0 0 25px hsl(152 60% 40% / 0.4), 0 0 80px hsl(152 60% 40% / 0.15);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(38 60% 55%), hsl(38 45% 78%), hsl(38 60% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider-champagne {
+    @apply w-20 h-px mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(38 45% 78%), transparent);
+  }
+
+  .divider-champagne-wide {
+    @apply w-40 h-px mx-auto;
+    background: linear-gradient(90deg, transparent, hsl(38 45% 78%), transparent);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
